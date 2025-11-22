@@ -59,7 +59,7 @@ async fn main(spawner: embassy_executor::Spawner) {
             let executor = unsafe {
                 CORE1_EXEC.init(embassy_executor::Executor::new())
             };
-            executor.run(|spawner| spawner.spawn(led_task(r.led)).unwrap());
+            executor.run(|spawner| spawner.spawn(led_task(r.led).unwrap()));
         }
     );
 
